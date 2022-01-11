@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "lib" : ["es2019.object", "DOM"],
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "jsx": "react-jsx",
+    "typeRoots": ["./src/@types", "./node_modules/@types"],
+    "allowJs": true,
+    "isolatedModules": true,
+    "paths": {
+      "@pages": ["src/pages/index.ts"],
+      "@components": ["src/components/index.ts"],
+      "@utils": ["src/utils/index.ts"],
+      "@assets": ["src/assets/index.ts"],
+      "@assets/*": ["src/assets/*"],
+      "@hooks/*": ["src/hooks/index.ts"],
+    },
+    "outDir": "./built"
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "./built/**/*"
+  ]
+}
