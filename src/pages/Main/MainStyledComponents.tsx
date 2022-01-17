@@ -22,37 +22,58 @@ export const WindowWrapper = styled.div`
   ${defaultTextStyle}
 `;
 
-export const HeaderWrapper = styled.div`
+export const WindowTitleWrapper = styled.div`
   position: absolute;
   height: 40px;
   left: 0px;
   right: 0px;
   top: 0px;
-
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
   background: #383838;
+
+  & * {
+    -webkit-user-select: none;
+    -webkit-app-region: none;
+  }
+`;
+
+export const ToolboxWrapper = styled.div`
+  position: absolute;
+  width: 504px;
+  height: 20px;
+  left: 368px;
+  top: 10px;
+
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const ConnectionStatusWrapper = styled.div`
   position: absolute;
-  width: 189px;
+  width: 229px;
   height: 18px;
   left: 18px;
   top: calc(50% - 18px/2);
 `;
 
-export const ConnectionStatusCircle = styled.div`
+export const ConnectionStatusCircle = styled.div<{ isConnectionEstablished?: boolean; }>`
   position: absolute;
   width: 18px;
   height: 18px;
   left: 0px;
   top: 0px;
   border-radius: 25px;
-  background: #FF0000;
+  background: ${({ isConnectionEstablished }) => (
+    isConnectionEstablished
+      ? '#00FF00'
+      : '#FF0000'
+  )};
 `;
 
 export const ConnectionStatusText = styled.div`
   position: absolute;
-  width: 180px;
+  width: 200px;
   height: 14px;
   left: 29px;
   top: 2px;
@@ -61,7 +82,7 @@ export const ConnectionStatusText = styled.div`
 `;
 
 export const blueButtonStyles = css`
-  position: absolute;
+  position: relative;
   height: 20px;
 
   background: #5E7ADC;
@@ -74,6 +95,11 @@ export const blueButtonStyles = css`
   padding: 0 0 0 20px;
 `;
 
+export const toolboxButtonStyles = css`
+  ${blueButtonStyles}
+  flex: 0 1 auto;
+`;
+
 export const blueButtonIconStyles = css`
   position: absolute;
   width: 13px;
@@ -83,10 +109,8 @@ export const blueButtonIconStyles = css`
 `;
 
 export const ConnectButtonWrapper = styled.button`
-  ${blueButtonStyles}
+  ${toolboxButtonStyles}
   width: 122px;
-  left: 248px;
-  top: calc(50% - 20px/2);
 `;
 
 export const ConnectButtonIcon = styled(ConnectIcon)`
@@ -95,7 +119,7 @@ export const ConnectButtonIcon = styled(ConnectIcon)`
 
 export const WindowCloseButtonsWrapper = styled.div`
   position: absolute;
-  width: 68px;
+  width: 42px;
   height: 16px;
   right: 18px;
   top: calc(50% - 16px/2);
@@ -112,6 +136,9 @@ export const CircleButton = styled.button<{ color:string; }>`
   flex: 0 1 auto;
   border: none;
   border-radius: 20px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const WindowContentWrapper = styled.div`
@@ -237,17 +264,13 @@ export const DeviceManagementBarWrapper = styled.div`
 `;
 
 export const ReadFromDeviceButtonWrapper = styled.button`
-  ${blueButtonStyles}
-  width: 179px;
-  left: 41px;
-  top: 341px;
+  ${toolboxButtonStyles}
+  width: 181px;
 `;
 
 export const WriteToDeviceButtonWrapper = styled.button`
-  ${blueButtonStyles}
-  width: 179px;
-  left: 41px;
-  top: 364px;
+  ${toolboxButtonStyles}
+  width: 181px;
 `;
 
 export const ReadFromDeviceButtonIcon = styled(UploadIcon)`

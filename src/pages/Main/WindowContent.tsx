@@ -12,6 +12,6 @@ export const WindowContent: FC = () => (
     <AudioRecorder />
     <AudioCardsSheetNavigation />
     <AudioCardsSheet />
-    <DeviceManagementBar />
+    {/* <DeviceManagementBar /> */}
   </WindowContentWrapper>
 );

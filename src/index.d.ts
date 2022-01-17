@@ -13,3 +13,17 @@ declare module '*.png' {
   const src: string;
   export default src;
 }
+
+declare module globalThis {
+  interface Window {
+    _: {
+      closeWindow: () => void;
+      minimizeWindow: () => void;
+    };
+  }
+}
+
+window._ = {
+  closeWindow: () => console.log('mock closeWindow'),
+  minimizeWindow: () => console.log('mock minimizeWindow'),
+};

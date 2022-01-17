@@ -1,3 +1,4 @@
+const {ipcRenderer} = window.require('electron');
 /**
  * This file will automatically be loaded by webpack and run in the "renderer" context.
  * To learn more about the differences between the "main" and the "renderer" context in
@@ -25,4 +26,28 @@
  *  });
  * ```
  */
-console.log('👋 This message is being logged by "renderer.js", included via webpack');
+
+
+const closeWindow = () => {
+  ipcRenderer.send('closeWindow');
+  console.log('WOOOW!!! It is works as needed');
+}
+
+const minimizeWindow = () => {
+  ipcRenderer.send('minimizeWindow');
+  console.log('WOOOW!!! It is works as needed');
+}
+
+
+
+interface Window {
+  _: {
+    closeWindow: () => void;
+    minimizeWindow: () => void;
+  };
+}
+
+window._ = {
+  closeWindow,
+  minimizeWindow,
+};

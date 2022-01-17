@@ -1,11 +1,11 @@
 import { FC } from 'react';
 import { WindowWrapper } from './MainStyledComponents';
-import { Header } from './Header';
+import { WindowTitle } from './WindowTitle';
 import { WindowContent } from './WindowContent';
 
 export const MainPage: FC<any> = () => (
   <WindowWrapper>
-    <Header />
+    <WindowTitle />
     <WindowContent />
   </WindowWrapper>
 );

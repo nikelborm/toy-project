@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "yarn cross-env GENERATE_SOURCEMAP=false node scripts/build.js",
-    "desktop": "yarn build && cp -rf ./build ./desktop/build"
+    "desktop": "yarn build && cp -af ./build/. ./desktop/src/ && cd desktop && yarn start"
   },
   "eslintConfig": {
     "extends": [
@@ -58,6 +58,7 @@
     "dayjs": "^1.10.6",
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
+    "electron": "^16.0.7",
     "eslint-config-react-app": "^6.0.0",
     "eslint-plugin-flowtype": "^5.2.0",
     "eslint-plugin-testing-library": "^3.9.2",

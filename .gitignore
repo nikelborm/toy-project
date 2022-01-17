@@ -23,3 +23,8 @@ yarn-debug.log*
 yarn-error.log*
 
 /.vscode
+desktop/src/static
+desktop/src/asset-manifest.json
+desktop/src/favicon.ico
+desktop/src/fonts.css
+desktop/src/index.html

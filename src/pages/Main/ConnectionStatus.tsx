@@ -5,11 +5,19 @@ import {
   ConnectionStatusText,
 } from './MainStyledComponents';
 
-export const ConnectionStatus: FC = () => (
+export const ConnectionStatus: FC<{
+  isConnectionEstablished?: boolean;
+}> = ({ isConnectionEstablished }) => (
   <ConnectionStatusWrapper>
-    <ConnectionStatusCircle />
+    <ConnectionStatusCircle isConnectionEstablished={isConnectionEstablished} />
     <ConnectionStatusText>
-      Соединение не установлено
+      Соединение
+      {
+        isConnectionEstablished
+          ? ' успешно '
+          : ' не '
+      }
+      установлено
     </ConnectionStatusText>
   </ConnectionStatusWrapper>
 );
