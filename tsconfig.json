@@ -12,6 +12,7 @@
     "typeRoots": ["./src/@types", "./node_modules/@types"],
     "allowJs": true,
     "isolatedModules": true,
+    "strict": true,
     "paths": {
       "@pages": ["src/pages/index.ts"],
       "@components": ["src/components/index.ts"],

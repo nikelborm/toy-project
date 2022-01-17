@@ -4,10 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node scripts/start.js",
-    "fix": "cd ../backend; yarn fix",
-    "demo": "yarn; yarn build; cd ../mock; yarn prodMockWithClearing; cd ../backend; cp -rf ./.env ./dist/.env; rm -rf build; cp -rf ../frontend/build ../build; cp -rf ../frontend/build ./build; node dist/src/main",
-    "prod": "yarn; rm -rf ./build; yarn build; cd ../backend; yarn migrate; cp -rf ./.env ./dist/.env; rm -rf ./build; rm -rf ../build; cp -rf ../frontend/build ../build; cp -rf ../frontend/build ./build; node dist/src/main",
-    "build": "node scripts/build.js"
+    "build": "yarn cross-env GENERATE_SOURCEMAP=false node scripts/build.js",
+    "desktop": "yarn build && cp -rf ./build ./desktop/build"
   },
   "eslintConfig": {
     "extends": [
@@ -55,6 +53,7 @@
     "bfj": "^7.0.2",
     "camelcase": "^6.1.0",
     "case-sensitive-paths-webpack-plugin": "2.3.0",
+    "cross-env": "^7.0.3",
     "css-loader": "4.3.0",
     "dayjs": "^1.10.6",
     "dotenv": "8.2.0",
@@ -69,6 +68,7 @@
     "html-webpack-plugin": "4.5.0",
     "identity-obj-proxy": "3.0.0",
     "mini-css-extract-plugin": "0.11.3",
+    "nanoid": "^3.2.0",
     "optimize-css-assets-webpack-plugin": "5.0.4",
     "pnp-webpack-plugin": "1.6.4",
     "postcss-flexbugs-fixes": "4.2.1",
