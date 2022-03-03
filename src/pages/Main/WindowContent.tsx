@@ -1,17 +1,23 @@
 import { FC } from 'react';
 import { WindowContentWrapper } from './MainStyledComponents';
 import { AudioLibrary } from './AudioLibrary';
-import { AudioRecorder } from './AudioRecorder';
+import { AudioImporter } from './AudioImporter';
+import { PictureLibrary } from './PictureLibrary';
+import { PictureImporter } from './PictureImporter';
 import { AudioCardsSheetNavigation } from './AudioCardsSheetNavigation';
 import { AudioCardsSheet } from './AudioCardsSheet';
-import { DeviceManagementBar } from './DeviceManagementBar';
 
 export const WindowContent: FC = () => (
   <WindowContentWrapper>
+
     <AudioLibrary />
-    <AudioRecorder />
+    <AudioImporter />
+
+    <PictureLibrary />
+    <PictureImporter />
+
     <AudioCardsSheetNavigation />
     <AudioCardsSheet />
-    {/* <DeviceManagementBar /> */}
+
   </WindowContentWrapper>
 );

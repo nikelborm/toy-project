@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { MediaLibraryWrapper } from './MainStyledComponents';
 
-export const AudioLibrary: FC = () => (
+export const PictureLibrary: FC = () => (
   <MediaLibraryWrapper
-    leftMarginPx={330}
+    leftMarginPx={0}
   >
-    AudioLibrary
+    PictureLibrary
   </MediaLibraryWrapper>
 );

@@ -16,14 +16,13 @@ declare module '*.png' {
 
 declare module globalThis {
   interface Window {
+    initScript: (useEffectArg: any, useStateArg: any) => void;
     _: {
       closeWindow: () => void;
       minimizeWindow: () => void;
+      useConnectionStatus: () => {
+        isConnectionEstablished: boolean;
+      };
     };
   }
 }
-
-window._ = {
-  closeWindow: () => console.log('mock closeWindow'),
-  minimizeWindow: () => console.log('mock minimizeWindow'),
-};

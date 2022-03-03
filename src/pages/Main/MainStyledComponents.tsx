@@ -149,23 +149,23 @@ export const WindowContentWrapper = styled.div`
   top: 75px;
 `;
 
-export const AudioLibraryWrapper = styled.div`
+export const MediaLibraryWrapper = styled.div<{ leftMarginPx: number; }>`
   position: absolute;
-  width: 335px;
-  height: 449px;
-  left: 0px;
+  width: 310px;
+  height: 488px;
+  left: ${(props) => props.leftMarginPx}px;
   top: 0px;
 
   background: linear-gradient(150.9deg, #343434 0%, #373737 100%);
   border-radius: 10px;
 `;
 
-export const AudioRecorderWrapper = styled.div`
+export const MediaImporterWrapper = styled.div<{ leftMarginPx: number; }>`
   position: absolute;
-  width: 335px;
-  height: 141px;
-  left: 0px;
-  top: 469px;
+  width: 310px;
+  height: 102px;
+  left: ${(props) => props.leftMarginPx}px;
+  top: 508px;
 
   background: #373737;
   border-radius: 10px;
@@ -175,7 +175,7 @@ export const SheetNavWrapper = styled.div`
   position: absolute;
   width: 550px;
   height: 40px;
-  left: 355px;
+  left: 660px;
   top: 0px;
 
   background: #5D5D5D;
@@ -239,7 +239,7 @@ export const AudioCardsSheetWrapper = styled.div`
   position: absolute;
   width: 550px;
   height: 550px;
-  left: 355px;
+  left: 660px;
   top: 60px;
 
   display: grid;
