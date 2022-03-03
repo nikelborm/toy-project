@@ -1,6 +1,11 @@
 import styled, { css } from 'styled-components';
 
-import { ConnectIcon, DownloadIcon, UploadIcon } from '@assets';
+import {
+  BigPlusIcon,
+  ConnectIcon,
+  DownloadIcon,
+  UploadIcon,
+} from '@assets';
 
 const defaultTextStyle = css`
   font-family: "Roboto";
@@ -180,6 +185,55 @@ export const SheetNavWrapper = styled.div`
 
   background: #5D5D5D;
   border-radius: 10px;
+`;
+
+export const MediaImporterText = styled.span`
+  position: absolute;
+  left: 0%;
+  right: 0%;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+
+  color: #FFFFFF;
+`;
+
+export const MediaImporterUpperText = styled(MediaImporterText)`
+  top: 12.75%;
+  bottom: 71.57%;
+`;
+
+export const MediaImporterBottomText = styled(MediaImporterText)`
+  top: 70.59%;
+  bottom: 13.73%;
+`;
+
+export const AddMediaIcon = styled(BigPlusIcon)`
+  position: absolute;
+  left: 46.13%;
+  right: 45.81%;
+  top: 37.25%;
+  bottom: 38.24%;
+
+  & > path {
+    fill: #B8B8B8;
+  }
+`;
+
+export const MediaTypeIconWrapper = styled.div`
+  position: absolute;
+  left: 55.81%;
+  right: 36.13%;
+  top: 37.25%;
+  bottom: 38.24%;
+
+  & path {
+    fill: #B8B8B8;
+  }
 `;
 
 export const SheetNavButton = styled.div`

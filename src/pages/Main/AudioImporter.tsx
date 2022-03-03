@@ -1,11 +1,11 @@
+import { AudioSpeakerIcon } from '@assets';
 import { FC } from 'react';
-import { MediaImporterWrapper } from './MainStyledComponents';
-import './MediaImporter';
+import { MediaImporter } from './MediaImporter';
 
 export const AudioImporter: FC = () => (
-  <MediaImporterWrapper
-    leftMarginPx={330}
+  <MediaImporter
+    leftMarginPx={0}
   >
-    AudioImporter
-  </MediaImporterWrapper>
+    <AudioSpeakerIcon />
+  </MediaImporter>
 );

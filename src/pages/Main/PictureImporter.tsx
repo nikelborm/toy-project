@@ -1,11 +1,11 @@
+import { PictureIcon } from '@assets';
 import { FC } from 'react';
-import { MediaImporterWrapper } from './MainStyledComponents';
-import './MediaImporter';
+import { MediaImporter } from './MediaImporter';
 
 export const PictureImporter: FC = () => (
-  <MediaImporterWrapper
-    leftMarginPx={0}
+  <MediaImporter
+    leftMarginPx={330}
   >
-    PictureImporter
-  </MediaImporterWrapper>
+    <PictureIcon />
+  </MediaImporter>
 );

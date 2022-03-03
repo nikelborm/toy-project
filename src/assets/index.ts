@@ -6,3 +6,6 @@ export { ReactComponent as DownloadIcon } from './download.svg';
 export { ReactComponent as UploadIcon } from './upload.svg';
 export { ReactComponent as CloseWindowIcon } from './close.svg';
 export { ReactComponent as MinimizeWindowIcon } from './hide.svg';
+export { ReactComponent as AudioSpeakerIcon } from './audio-speaker.svg';
+export { ReactComponent as BigPlusIcon } from './big-plus.svg';
+export { ReactComponent as PictureIcon } from './picture.svg';
