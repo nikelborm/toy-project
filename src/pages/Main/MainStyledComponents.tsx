@@ -4,8 +4,11 @@ import {
   BigPlusIcon,
   ConnectIcon,
   DownloadIcon,
+  MicrophoneIcon,
+  PrinterIcon,
   UploadIcon,
 } from '@assets';
+import { ConnectionStatusType } from 'src/types';
 
 const defaultTextStyle = css`
   font-family: "Roboto";
@@ -45,9 +48,9 @@ export const WindowTitleWrapper = styled.div`
 
 export const ToolboxWrapper = styled.div`
   position: absolute;
-  width: 504px;
+  width: 779px;
   height: 20px;
-  left: 368px;
+  left: 365px;
   top: 10px;
 
   display: flex;
@@ -62,18 +65,28 @@ export const ConnectionStatusWrapper = styled.div`
   top: calc(50% - 18px/2);
 `;
 
-export const ConnectionStatusCircle = styled.div<{ isConnectionEstablished?: boolean; }>`
+interface ConnectionStatusCircleProps {
+  currentConnectionStatusType: ConnectionStatusType;
+  colorMap: {
+    [connectionStatus in ConnectionStatusType]: string;
+  };
+}
+
+export const ConnectionStatusCircle = styled.div<ConnectionStatusCircleProps>`
   position: absolute;
   width: 18px;
   height: 18px;
   left: 0px;
   top: 0px;
   border-radius: 25px;
-  background: ${({ isConnectionEstablished }) => (
-    isConnectionEstablished
-      ? '#00FF00'
-      : '#FF0000'
-  )};
+  background: ${({
+    currentConnectionStatusType,
+    colorMap,
+  }) => (currentConnectionStatusType in colorMap
+    ? colorMap[currentConnectionStatusType]
+    : '#ffffff'
+  )
+};
 `;
 
 export const ConnectionStatusText = styled.div`
@@ -102,7 +115,6 @@ export const blueButtonStyles = css`
 
 export const toolboxButtonStyles = css`
   ${blueButtonStyles}
-  flex: 0 1 auto;
 `;
 
 export const blueButtonIconStyles = css`
@@ -110,10 +122,23 @@ export const blueButtonIconStyles = css`
   width: 13px;
   height: 13px;
   left: 7px;
-  top: 3px;
+  top: 3.5px;
 `;
 
 export const ConnectButtonWrapper = styled.button`
+  ${toolboxButtonStyles}
+  width: 122px;
+`;
+
+export const PrintButtonIcon = styled(PrinterIcon)`
+  ${blueButtonIconStyles}
+`;
+
+export const RecordAudioButtonIcon = styled(MicrophoneIcon)`
+  ${blueButtonIconStyles}
+`;
+
+export const PrintButtonWrapper = styled.button`
   ${toolboxButtonStyles}
   width: 122px;
 `;
@@ -138,7 +163,6 @@ export const CircleButton = styled.button<{ color:string; }>`
   height: 16px;
 
   background: ${(props) => props.color};
-  flex: 0 1 auto;
   border: none;
   border-radius: 20px;
   display: grid;
@@ -320,6 +344,11 @@ export const DeviceManagementBarWrapper = styled.div`
 export const ReadFromDeviceButtonWrapper = styled.button`
   ${toolboxButtonStyles}
   width: 181px;
+`;
+
+export const RecordAudioButtonWrapper = styled.button`
+  ${toolboxButtonStyles}
+  width: 113px;
 `;
 
 export const WriteToDeviceButtonWrapper = styled.button`

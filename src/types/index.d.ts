@@ -15,13 +15,15 @@ declare module '*.png' {
 }
 
 declare module globalThis {
+  import type { ConnectionStatusType } from './connectionStatusType';
+
   interface Window {
     initScript: (useEffectArg: any, useStateArg: any) => void;
     _: {
       closeWindow: () => void;
       minimizeWindow: () => void;
       useConnectionStatus: () => {
-        isConnectionEstablished: boolean;
+        currentConnectionStatusType: ConnectionStatusType;
       };
     };
   }

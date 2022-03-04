@@ -9,3 +9,6 @@ export { ReactComponent as MinimizeWindowIcon } from './hide.svg';
 export { ReactComponent as AudioSpeakerIcon } from './audio-speaker.svg';
 export { ReactComponent as BigPlusIcon } from './big-plus.svg';
 export { ReactComponent as PictureIcon } from './picture.svg';
+export { ReactComponent as PrinterIcon } from './printer.svg';
+export { ReactComponent as MicrophoneIcon } from './microphone.svg';
+export { ReactComponent as DelimiterIcon } from './toolbox-delimiter.svg';

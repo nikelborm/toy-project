@@ -4,7 +4,7 @@ import '@fontsource/roboto';
 import React, { useEffect as useEffectSource, useState as useStateSource } from 'react';
 import App from './App';
 import './index.css';
-import './index.d';
+import { ConnectionStatusType } from './types';
 
 if (process.env.NODE_ENV === 'development') {
   const closeWindow = () => console.log('mock closeWindow');
@@ -15,18 +15,22 @@ if (process.env.NODE_ENV === 'development') {
     useEffect: typeof useEffectSource,
     useState: typeof useStateSource,
   ) => () => {
-    const [isConnectionEstablished, setConnectionEstablished] = useState(false);
+    const [
+      currentConnectionStatusType,
+      setCurrentConnectionStatusType,
+    ] = useState(ConnectionStatusType.NOT_CONNECTED);
+
     useEffect(() => {
       const id = setInterval(
         () => {
-          setConnectionEstablished((status) => !status);
+          setCurrentConnectionStatusType(() => Math.floor(Math.random() * 3));
         },
-        1000,
+        500,
       );
       return () => clearInterval(id);
     }, []);
     return {
-      isConnectionEstablished,
+      currentConnectionStatusType,
     };
   };
   window.initScript = (useEffect, useState) => {
