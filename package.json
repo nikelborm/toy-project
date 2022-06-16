@@ -58,7 +58,7 @@
     "dayjs": "^1.10.6",
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
-    "electron": "^16.0.7",
+    "electron": "^16.2.6",
     "eslint-config-react-app": "^6.0.0",
     "eslint-plugin-flowtype": "^5.2.0",
     "eslint-plugin-testing-library": "^3.9.2",
